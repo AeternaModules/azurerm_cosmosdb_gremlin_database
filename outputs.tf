@@ -1,3 +1,7 @@
+output "cosmosdb_gremlin_databases_id" {
+  description = "Map of id values across all cosmosdb_gremlin_databases, keyed the same as var.cosmosdb_gremlin_databases"
+  value       = { for k, v in azurerm_cosmosdb_gremlin_database.cosmosdb_gremlin_databases : k => v.id }
+}
 output "cosmosdb_gremlin_databases_account_name" {
   description = "Map of account_name values across all cosmosdb_gremlin_databases, keyed the same as var.cosmosdb_gremlin_databases"
   value       = { for k, v in azurerm_cosmosdb_gremlin_database.cosmosdb_gremlin_databases : k => v.account_name }
